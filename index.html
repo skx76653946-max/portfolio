@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>四人 - 3D Artist</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-bg"></div>
+    <h1>四人</h1>
+    <p class="tagline">3D Artist</p>
+    <div class="header-gradient"></div>
+  </header>
+  <main>
+    <section class="section" id="models">
+      <h2>Works</h2>
+      <div class="gallery"><div class="card" data-model="models/work-1.glb" data-poster="" data-name="Work 1"><model-viewer src="models/work-1.glb" alt="Work 1" auto-rotate camera-controls ar></model-viewer><button class="expand-btn" aria-label="Expand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button><p class="caption">Work 1</p></div><div class="card" data-model="models/work-2.glb" data-poster="" data-name="Work 2"><model-viewer src="models/work-2.glb" alt="Work 2" auto-rotate camera-controls ar></model-viewer><button class="expand-btn" aria-label="Expand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button><p class="caption">Work 2</p></div><div class="card" data-model="models/work-3.glb" data-poster="" data-name="Work 3"><model-viewer src="models/work-3.glb" alt="Work 3" auto-rotate camera-controls ar></model-viewer><button class="expand-btn" aria-label="Expand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button><p class="caption">Work 3</p></div><div class="card" data-model="models/work-4.glb" data-poster="" data-name="Work 4"><model-viewer src="models/work-4.glb" alt="Work 4" auto-rotate camera-controls ar></model-viewer><button class="expand-btn" aria-label="Expand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button><p class="caption">Work 4</p></div><div class="card" data-model="models/work-5.glb" data-poster="" data-name="Work 5"><model-viewer src="models/work-5.glb" alt="Work 5" auto-rotate camera-controls ar></model-viewer><button class="expand-btn" aria-label="Expand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button><p class="caption">Work 5</p></div></div>
+    </section>
+    <section class="section" id="videos">
+      <h2>Videos</h2>
+      <div class="gallery"><div class="card video-card"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Video 1" frameborder="0" allowfullscreen></iframe><p class="caption">Video 1</p></div><div class="card video-card"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="Video 2" frameborder="0" allowfullscreen></iframe><p class="caption">Video 2</p></div><div class="card video-card"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="Video 3" frameborder="0" allowfullscreen></iframe><p class="caption">Video 3</p></div></div>
+    </section>
+  </main>
+  <footer>
+    <p>Contact: 1261182701@qq.com</p>
+  </footer>
+  <div class="modal" id="modelModal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <model-viewer id="modalViewer" auto-rotate camera-controls ar></model-viewer>
+      <p class="modal-caption" id="modalCaption"></p>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var modal = document.getElementById("modelModal");
+      var modalViewer = document.getElementById("modalViewer");
+      var modalCaption = document.getElementById("modalCaption");
+      var closeBtn = document.querySelector(".modal-close");
+      document.querySelectorAll(".card[data-model]").forEach(function(card) {
+        var btn = card.querySelector(".expand-btn");
+        if (btn) {
+          btn.addEventListener("click", function() {
+            modalViewer.src = card.dataset.model;
+            modalViewer.poster = card.dataset.poster || "";
+            modalCaption.textContent = card.dataset.name;
+            modal.classList.add("active");
+          });
+        }
+      });
+      closeBtn.addEventListener("click", function() {
+        modal.classList.remove("active");
+        modalViewer.src = "";
+      });
+      modal.addEventListener("click", function(e) {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+          modalViewer.src = "";
+        }
+      });
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape" && modal.classList.contains("active")) {
+          modal.classList.remove("active");
+          modalViewer.src = "";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
