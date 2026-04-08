@@ -14,57 +14,130 @@
     <p class="tagline">3D Artist</p>
     <div class="header-gradient"></div>
   </header>
+
   <main>
+    <!-- Models Section -->
     <section class="section" id="models">
       <h2>Works</h2>
-      <div class="gallery"><div class="card" data-model="models/work-1.glb" data-poster="" data-name="Work 1"><model-viewer src="models/work-1.glb" alt="Work 1" auto-rotate camera-controls ar></model-viewer><button class="expand-btn" aria-label="Expand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button><p class="caption">Work 1</p></div><div class="card" data-model="models/work-2.glb" data-poster="" data-name="Work 2"><model-viewer src="models/work-2.glb" alt="Work 2" auto-rotate camera-controls ar></model-viewer><button class="expand-btn" aria-label="Expand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button><p class="caption">Work 2</p></div><div class="card" data-model="models/work-3.glb" data-poster="" data-name="Work 3"><model-viewer src="models/work-3.glb" alt="Work 3" auto-rotate camera-controls ar></model-viewer><button class="expand-btn" aria-label="Expand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button><p class="caption">Work 3</p></div><div class="card" data-model="models/work-4.glb" data-poster="" data-name="Work 4"><model-viewer src="models/work-4.glb" alt="Work 4" auto-rotate camera-controls ar></model-viewer><button class="expand-btn" aria-label="Expand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button><p class="caption">Work 4</p></div><div class="card" data-model="models/work-5.glb" data-poster="" data-name="Work 5"><model-viewer src="models/work-5.glb" alt="Work 5" auto-rotate camera-controls ar></model-viewer><button class="expand-btn" aria-label="Expand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button><p class="caption">Work 5</p></div></div>
+      <div class="gallery">
+        <!-- Model 1 - Astronaut -->
+        <div class="card" data-model="https://modelviewer.dev/shared-assets/models/Astronaut.glb" data-poster="https://modelviewer.dev/shared-assets/models/Astronaut.png" data-name="Work 1 - Astronaut">
+          <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" alt="Work 1" auto-rotate camera-controls ar poster="https://modelviewer.dev/shared-assets/models/Astronaut.png"></model-viewer>
+          <button class="expand-btn" aria-label="Expand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </button>
+          <p class="caption">Work 1 - Astronaut</p>
+        </div>
+        <!-- Model 2 - Horse -->
+        <div class="card" data-model="https://modelviewer.dev/shared-assets/models/Horse.glb" data-poster="https://modelviewer.dev/shared-assets/models/Horse.png" data-name="Work 2 - Horse">
+          <model-viewer src="https://modelviewer.dev/shared-assets/models/Horse.glb" alt="Work 2" auto-rotate camera-controls ar poster="https://modelviewer.dev/shared-assets/models/Horse.png"></model-viewer>
+          <button class="expand-btn" aria-label="Expand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </button>
+          <p class="caption">Work 2 - Horse</p>
+        </div>
+        <!-- Model 3 - Chair -->
+        <div class="card" data-model="https://modelviewer.dev/shared-assets/models/SheenChair.glb" data-poster="https://modelviewer.dev/shared-assets/models/SheenChair.png" data-name="Work 3 - Chair">
+          <model-viewer src="https://modelviewer.dev/shared-assets/models/SheenChair.glb" alt="Work 3" auto-rotate camera-controls ar poster="https://modelviewer.dev/shared-assets/models/SheenChair.png"></model-viewer>
+          <button class="expand-btn" aria-label="Expand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </button>
+          <p class="caption">Work 3 - Chair</p>
+        </div>
+        <!-- Model 4 - Planet -->
+        <div class="card" data-model="https://modelviewer.dev/shared-assets/models/ReflectionProbePlanet.glb" data-poster="https://modelviewer.dev/shared-assets/models/ReflectionProbePlanet.png" data-name="Work 4 - Planet">
+          <model-viewer src="https://modelviewer.dev/shared-assets/models/ReflectionProbePlanet.glb" alt="Work 4" auto-rotate camera-controls ar poster="https://modelviewer.dev/shared-assets/models/ReflectionProbePlanet.png"></model-viewer>
+          <button class="expand-btn" aria-label="Expand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </button>
+          <p class="caption">Work 4 - Planet</p>
+        </div>
+        <!-- Model 5 - Dragon -->
+        <div class="card" data-model="https://modelviewer.dev/shared-assets/models/DragonAttenuation.glb" data-poster="https://modelviewer.dev/shared-assets/models/DragonAttenuation.png" data-name="Work 5 - Dragon">
+          <model-viewer src="https://modelviewer.dev/shared-assets/models/DragonAttenuation.glb" alt="Work 5" auto-rotate camera-controls ar poster="https://modelviewer.dev/shared-assets/models/DragonAttenuation.png"></model-viewer>
+          <button class="expand-btn" aria-label="Expand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </button>
+          <p class="caption">Work 5 - Dragon</p>
+        </div>
+      </div>
     </section>
+
+    <!-- Videos Section -->
     <section class="section" id="videos">
       <h2>Videos</h2>
-      <div class="gallery"><div class="card video-card"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Video 1" frameborder="0" allowfullscreen></iframe><p class="caption">Video 1</p></div><div class="card video-card"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="Video 2" frameborder="0" allowfullscreen></iframe><p class="caption">Video 2</p></div><div class="card video-card"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="Video 3" frameborder="0" allowfullscreen></iframe><p class="caption">Video 3</p></div></div>
+      <div class="gallery">
+        <!-- Video 1 -->
+        <div class="card video-card">
+          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <p class="caption">Video 1</p>
+        </div>
+        <!-- Video 2 -->
+        <div class="card video-card">
+          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <p class="caption">Video 2</p>
+        </div>
+        <!-- Video 3 -->
+        <div class="card video-card">
+          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <p class="caption">Video 3</p>
+        </div>
+      </div>
     </section>
   </main>
+
   <footer>
-    <p>Contact: 1261182701@qq.com</p>
+    <p>Contact: your.email@example.com</p>
   </footer>
+
+  <!-- Modal for expanded model view -->
   <div class="modal" id="modelModal">
     <div class="modal-content">
-      <button class="modal-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <button class="modal-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
       <model-viewer id="modalViewer" auto-rotate camera-controls ar></model-viewer>
       <p class="modal-caption" id="modalCaption"></p>
     </div>
   </div>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var modal = document.getElementById("modelModal");
-      var modalViewer = document.getElementById("modalViewer");
-      var modalCaption = document.getElementById("modalCaption");
-      var closeBtn = document.querySelector(".modal-close");
-      document.querySelectorAll(".card[data-model]").forEach(function(card) {
-        var btn = card.querySelector(".expand-btn");
+    document.addEventListener('DOMContentLoaded', function() {
+      var modal = document.getElementById('modelModal');
+      var modalViewer = document.getElementById('modalViewer');
+      var modalCaption = document.getElementById('modalCaption');
+      var closeBtn = document.querySelector('.modal-close');
+
+      document.querySelectorAll('.card[data-model]').forEach(function(card) {
+        var btn = card.querySelector('.expand-btn');
         if (btn) {
-          btn.addEventListener("click", function() {
+          btn.addEventListener('click', function() {
             modalViewer.src = card.dataset.model;
-            modalViewer.poster = card.dataset.poster || "";
+            modalViewer.poster = card.dataset.poster || '';
             modalCaption.textContent = card.dataset.name;
-            modal.classList.add("active");
+            modal.classList.add('active');
           });
         }
       });
-      closeBtn.addEventListener("click", function() {
-        modal.classList.remove("active");
-        modalViewer.src = "";
+
+      closeBtn.addEventListener('click', function() {
+        modal.classList.remove('active');
+        modalViewer.src = '';
       });
-      modal.addEventListener("click", function(e) {
+
+      modal.addEventListener('click', function(e) {
         if (e.target === modal) {
-          modal.classList.remove("active");
-          modalViewer.src = "";
+          modal.classList.remove('active');
+          modalViewer.src = '';
         }
       });
-      document.addEventListener("keydown", function(e) {
-        if (e.key === "Escape" && modal.classList.contains("active")) {
-          modal.classList.remove("active");
-          modalViewer.src = "";
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          modal.classList.remove('active');
+          modalViewer.src = '';
         }
       });
     });
