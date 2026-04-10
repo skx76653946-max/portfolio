@@ -26,9 +26,9 @@ header {
   padding: 4rem 1rem 5rem;
   position: relative;
   z-index: 1;
+  background: linear-gradient(180deg, #2a2d33 0%, var(--bg-primary) 100%);
 }
 
-/* Ink wash image as background - only effect */
 .header-bg {
   position: absolute;
   top: 0;
@@ -36,35 +36,33 @@ header {
   right: 0;
   bottom: 0;
   background-color: #e8e4dc;
-  background-image: url('ink-bg.png');
+  background-image: url("ink-bg.png");
   background-size: cover;
   background-position: center 40%;
   opacity: 0.7;
   z-index: 0;
 }
 
-/* Gradient fade at bottom of header */
 .header-gradient {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 15px;
-  background: linear-gradient(to bottom, transparent 0%, var(--bg-primary) 100%);
+  background: linear-gradient(to bottom, transparent, var(--bg-primary));
   z-index: 4;
   pointer-events: none;
 }
 
-/* Ink shadow on text */
 header h1 {
   font-size: 4rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   margin-bottom: 0.5rem;
-  color: #ffffff;
+  color: #fff;
   position: relative;
   z-index: 2;
-  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 3px 12px rgba(0,0,0,.8), 0 0 30px rgba(0,0,0,.5);
 }
 
 .tagline {
@@ -75,7 +73,7 @@ header h1 {
   text-transform: uppercase;
   position: relative;
   z-index: 2;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 6px rgba(0,0,0,.7);
 }
 
 main {
@@ -116,12 +114,6 @@ main {
   position: relative;
 }
 
-.model-viewer {
-  width: 100%;
-  height: 100%;
-  --poster-color: transparent;
-}
-
 model-viewer {
   width: 100%;
   height: 100%;
@@ -136,26 +128,6 @@ model-viewer {
   width: 100%;
   height: 100%;
   border: none;
-}
-
-.card-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-secondary);
-  gap: 0.5rem;
-}
-
-.placeholder-icon {
-  font-size: 2.5rem;
-}
-
-.placeholder-text {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
 }
 
 .caption {
@@ -188,10 +160,6 @@ footer {
 
 /* Mobile - horizontal scroll for model cards */
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 2.5rem;
-  }
-
   .gallery {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -211,7 +179,49 @@ footer {
     flex: 0 0 85vw;
     max-width: 85vw;
     scroll-snap-align: center;
-    scroll-margin-bottom: 1rem;
+    height: 240px;
+    aspect-ratio: auto;
+  }
+
+  .gallery .card model-viewer {
+    display: none;
+  }
+
+  .gallery .card .card-placeholder {
+    display: flex;
+  }
+
+  .card-placeholder {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    gap: 0.5rem;
+    z-index: 2;
+  }
+
+  .card-placeholder img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .placeholder-icon {
+    color: var(--text-secondary);
+  }
+
+  .placeholder-text {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
   }
 }
 
@@ -242,7 +252,7 @@ model-viewer::part(default-ar-button) {
 .expand-btn svg {
   width: 18px;
   height: 18px;
-  color: white;
+  color: #fff;
 }
 
 .card:hover .expand-btn {
@@ -302,7 +312,7 @@ model-viewer::part(default-ar-button) {
 .modal-close svg {
   width: 24px;
   height: 24px;
-  color: white;
+  color: #fff;
 }
 
 .modal-close:hover {
@@ -381,21 +391,6 @@ model-viewer::part(default-ar-button) {
   color: var(--text-secondary);
 }
 
-@media (max-width: 600px) {
-  .modal {
-    padding: 1rem;
-  }
-
-  #modalViewer {
-    height: 50vh;
-  }
-
-  .modal-close {
-    top: -3.5rem;
-  }
-}
-
-
 /* Video thumbnail & play button */
 .video-thumbnail {
   width: 100%;
@@ -406,6 +401,7 @@ model-viewer::part(default-ar-button) {
   justify-content: center;
   position: relative;
 }
+
 .video-thumbnail img {
   position: absolute;
   inset: 0;
@@ -414,6 +410,7 @@ model-viewer::part(default-ar-button) {
   object-fit: cover;
   z-index: 0;
 }
+
 .video-thumbnail::before {
   content: "";
   position: absolute;
@@ -421,6 +418,7 @@ model-viewer::part(default-ar-button) {
   background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
+
 .play-icon {
   width: 48px;
   height: 48px;
@@ -431,6 +429,7 @@ model-viewer::part(default-ar-button) {
   justify-content: center;
   z-index: 2;
 }
+
 .play-icon svg {
   width: 24px;
   height: 24px;
@@ -446,8 +445,24 @@ model-viewer::part(default-ar-button) {
   border-radius: 12px;
   overflow: hidden;
 }
+
 .video-modal .video-container iframe {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* Mobile modal adjustments */
+@media (max-width: 600px) {
+  .modal {
+    padding: 1rem;
+  }
+
+  #modalViewer {
+    height: 50vh;
+  }
+
+  .modal-close {
+    top: -3.5rem;
+  }
 }
