@@ -62,7 +62,10 @@
 
       setupViewer(modalViewer, modalLoader);
 
-      var lastOpenedModel = "";
+      document.querySelectorAll(".card[data-model]").forEach(function(card) {
+        var btn = card.querySelector(".expand-btn");
+        if (btn) {
+          var lastOpenedModel = "";
       document.querySelectorAll(".card[data-model]").forEach(function(card) {
         var btn = card.querySelector(".expand-btn");
         if (btn) {
