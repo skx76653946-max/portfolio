@@ -346,12 +346,23 @@ model-viewer::part(default-ar-button) {
 
 .loader-text {
   position: absolute;
-  top: 50%;
+  top: calc(50% - 8px);
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 0.75rem;
   color: var(--text-secondary);
   font-weight: 500;
+  pointer-events: none;
+}
+
+.loader-hint {
+  position: absolute;
+  top: calc(50% + 14px);
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
   pointer-events: none;
 }
 
