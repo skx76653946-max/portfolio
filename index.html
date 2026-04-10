@@ -52,8 +52,8 @@
         var pctEl = loader.querySelector(".loader-text");
         viewer.addEventListener("load", function() { loader.classList.add("hidden"); if(pctEl) pctEl.textContent="100%"; });
         viewer.addEventListener("error", function() { loader.classList.add("hidden"); });
-        viewer.addEventListener("progress", function(e) {
-          if (pctEl && e.detail.total > 0) { pctEl.textContent = Math.round(e.detail.loaded/e.detail.total*100) + "%"; }
+        viewer.addEventListener("progress-change", function(e) {
+          if (pctEl) { pctEl.textContent = Math.round(e.detail * 100) + "%"; }
         });
         if (viewer.src && viewer.loaded) { loader.classList.add("hidden"); } else { loader.classList.remove("hidden"); }
       }
