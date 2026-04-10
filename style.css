@@ -405,11 +405,20 @@ model-viewer::part(default-ar-button) {
   justify-content: center;
   position: relative;
 }
+.video-thumbnail img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 .video-thumbnail::before {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 .play-icon {
   width: 48px;
@@ -419,7 +428,7 @@ model-viewer::part(default-ar-button) {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 2;
 }
 .play-icon svg {
   width: 24px;
