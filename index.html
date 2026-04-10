@@ -17,7 +17,6 @@
   </main>
   <script>
 document.addEventListener("DOMContentLoaded", function() {
-  var observer = null;
   var activeCard = null;
 
   function activateCard(card) {
@@ -39,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
     mv.setAttribute("ar", "");
     if (poster) mv.poster = poster;
 
-    // Replace inner content with model-viewer
     inner.style.display = "none";
     card.insertBefore(mv, inner);
   }
@@ -51,25 +49,44 @@ document.addEventListener("DOMContentLoaded", function() {
     if (inner) inner.style.display = "";
   }
 
-  // Mobile: use IntersectionObserver
+  function findMostVisibleCard() {
+    var gallery = document.querySelector(".gallery");
+    if (!gallery) return null;
+    var cards = gallery.querySelectorAll(".card[data-model]");
+    var best = null;
+    var bestRatio = 0;
+    var galleryRect = gallery.getBoundingClientRect();
+    var centerX = galleryRect.left + galleryRect.width / 2;
+
+    cards.forEach(function(card) {
+      var rect = card.getBoundingClientRect();
+      var visibleLeft = Math.max(rect.left, galleryRect.left);
+      var visibleRight = Math.min(rect.right, galleryRect.right);
+      var visibleWidth = Math.max(0, visibleRight - visibleLeft);
+      var ratio = visibleWidth / rect.width;
+      if (ratio > bestRatio) {
+        bestRatio = ratio;
+        best = card;
+      }
+    });
+    return bestRatio > 0.3 ? best : null;
+  }
+
+  // Mobile only: use scroll-based detection
   var isMobile = window.innerWidth <= 600;
   if (isMobile) {
-    observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          activateCard(entry.target);
-        } else {
-          if (activeCard === entry.target) {
-            deactivateCard(entry.target);
-            activeCard = null;
-          }
+    var gallery = document.querySelector(".gallery");
+    if (gallery) {
+      gallery.addEventListener("scroll", function() {
+        var card = findMostVisibleCard();
+        if (card && card !== activeCard) {
+          activateCard(card);
         }
       });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll(".card[data-model]").forEach(function(card) {
-      observer.observe(card);
-    });
+      // Activate first card on load
+      var first = findMostVisibleCard();
+      if (first) activateCard(first);
+    }
   }
 });
 </script>
