@@ -170,10 +170,10 @@
   var videoCaption = document.getElementById("videoCaption");
   var videoCloseBtn = videoModal.querySelector(".modal-close");
   document.querySelectorAll(".card[data-video]").forEach(function(card) {
-    var btn = card.querySelector(".expand-btn");
-    if (btn) {
-      btn.addEventListener("click", function() {
-        var videoUrl = card.dataset.video;
+    card.addEventListener("click", function(e) {
+      if (e.target.closest(".expand-btn")) return;
+      e.preventDefault();
+      var videoUrl = card.dataset.video;
         var name = card.dataset.name;
         videoCaption.textContent = name;
         var iframe = document.createElement("iframe");
