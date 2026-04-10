@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>四人 - 3D Artist</title>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
-  <style>:root{--bg-primary:#1a1d23;--bg-secondary:#21252d;--bg-card:#262b33;--text-secondary:#8b949e}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Segoe UI,system-ui,sans-serif;background-color:var(--bg-primary);color:#e6edf3;line-height:1.6}header{text-align:center;padding:4rem 1rem}header h1{font-size:4rem;font-weight:700;color:#fff}.tagline{color:#e8e0d0;font-size:1rem;letter-spacing:.35em;text-transform:uppercase}main{max-width:1200px;margin:0 auto;padding:2rem 1rem}.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}.card{flex:0 1 340px;background-color:var(--bg-card);border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;aspect-ratio:4/3;position:relative}.card-inner{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#2a2d33,#1a1d23);gap:.5rem}.card-inner svg{color:#555}.card-inner span{color:#555;font-size:.85rem}model-viewer{width:100%;height:100%;background-color:var(--bg-card)}.caption{position:absolute;bottom:0;left:0;right:0;padding:.75rem;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:.9rem;color:var(--text-secondary)}@media(max-width:600px){.gallery{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;justify-content:flex-start;gap:0;padding-bottom:1rem}.gallery::-webkit-scrollbar{display:none}.gallery .card{flex:0 0 85vw;max-width:85vw;scroll-snap-align:center;height:240px}header h1{font-size:2.5rem}}</style>
+  <style>:root{--bg-primary:#1a1d23;--bg-secondary:#21252d;--bg-card:#262b33;--text-secondary:#8b949e}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Segoe UI,system-ui,sans-serif;background-color:var(--bg-primary);color:#e6edf3;line-height:1.6}header{text-align:center;padding:4rem 1rem}header h1{font-size:4rem;font-weight:700;color:#fff}.tagline{color:#e8e0d0;font-size:1rem;letter-spacing:.35em;text-transform:uppercase}main{max-width:1200px;margin:0 auto;padding:2rem 1rem}.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}.card{flex:0 1 340px;background-color:var(--bg-card);border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;aspect-ratio:4/3;position:relative;cursor:pointer}.card-inner{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#2a2d33,#1a1d23);gap:.5rem}.card-inner svg{color:#555}.card-inner span{color:#555;font-size:.85rem}model-viewer{width:100%;height:100%;background-color:var(--bg-card)}.caption{position:absolute;bottom:0;left:0;right:0;padding:.75rem;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:.9rem;color:var(--text-secondary)}@media(max-width:600px){.gallery{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;justify-content:flex-start;gap:0;padding-bottom:1rem}.gallery::-webkit-scrollbar{display:none}.gallery .card{flex:0 0 85vw;max-width:85vw;scroll-snap-align:center;height:240px}header h1{font-size:2.5rem}}</style>
 </head>
 <body>
   <header>
@@ -13,16 +13,13 @@
     <p class="tagline">3D Artist</p>
   </header>
   <main>
-    <div class="gallery"><div class="card" data-model="models/whale.glb" data-poster="" data-name="Whale"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>3D</span></div><p class="caption">Whale</p></div><div class="card" data-model="models/gun.glb" data-poster="" data-name="Gun"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>3D</span></div><p class="caption">Gun</p></div><div class="card" data-model="models/lantern.glb" data-poster="" data-name="Lantern"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>3D</span></div><p class="caption">Lantern</p></div><div class="card" data-model="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" data-poster="https://modelviewer.dev/shared-assets/models/RobotExpressive.png" data-name="Robot"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>3D</span></div><p class="caption">Robot</p></div><div class="card" data-model="https://modelviewer.dev/shared-assets/models/Horse.glb" data-poster="https://modelviewer.dev/shared-assets/models/Horse.png" data-name="Horse 2"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>3D</span></div><p class="caption">Horse 2</p></div></div>
+    <div class="gallery"><div class="card" data-model="models/whale.glb" data-poster="" data-name="Whale"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>Tap to load 3D</span></div><p class="caption">Whale</p></div><div class="card" data-model="models/gun.glb" data-poster="" data-name="Gun"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>Tap to load 3D</span></div><p class="caption">Gun</p></div><div class="card" data-model="models/lantern.glb" data-poster="" data-name="Lantern"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>Tap to load 3D</span></div><p class="caption">Lantern</p></div><div class="card" data-model="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" data-poster="https://modelviewer.dev/shared-assets/models/RobotExpressive.png" data-name="Robot"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>Tap to load 3D</span></div><p class="caption">Robot</p></div><div class="card" data-model="https://modelviewer.dev/shared-assets/models/Horse.glb" data-poster="https://modelviewer.dev/shared-assets/models/Horse.png" data-name="Horse 2"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>Tap to load 3D</span></div><p class="caption">Horse 2</p></div></div>
   </main>
   <script>
 document.addEventListener("DOMContentLoaded", function() {
-  var activeCard = null;
-
   function activateCard(card) {
-    if (activeCard === card) return;
-    if (activeCard) deactivateCard(activeCard);
-    activeCard = card;
+    // Already activated?
+    if (card.querySelector("model-viewer")) return;
 
     var model = card.dataset.model;
     var poster = card.dataset.poster || "";
@@ -42,52 +39,12 @@ document.addEventListener("DOMContentLoaded", function() {
     card.insertBefore(mv, inner);
   }
 
-  function deactivateCard(card) {
-    var mv = card.querySelector("model-viewer");
-    var inner = card.querySelector(".card-inner");
-    if (mv) card.removeChild(mv);
-    if (inner) inner.style.display = "";
-  }
-
-  function findMostVisibleCard() {
-    var gallery = document.querySelector(".gallery");
-    if (!gallery) return null;
-    var cards = gallery.querySelectorAll(".card[data-model]");
-    var best = null;
-    var bestRatio = 0;
-    var galleryRect = gallery.getBoundingClientRect();
-    var centerX = galleryRect.left + galleryRect.width / 2;
-
-    cards.forEach(function(card) {
-      var rect = card.getBoundingClientRect();
-      var visibleLeft = Math.max(rect.left, galleryRect.left);
-      var visibleRight = Math.min(rect.right, galleryRect.right);
-      var visibleWidth = Math.max(0, visibleRight - visibleLeft);
-      var ratio = visibleWidth / rect.width;
-      if (ratio > bestRatio) {
-        bestRatio = ratio;
-        best = card;
-      }
+  // Tap/click to load
+  document.querySelectorAll(".card[data-model]").forEach(function(card) {
+    card.addEventListener("click", function() {
+      activateCard(card);
     });
-    return bestRatio > 0.3 ? best : null;
-  }
-
-  // Mobile only: use scroll-based detection
-  var isMobile = window.innerWidth <= 600;
-  if (isMobile) {
-    var gallery = document.querySelector(".gallery");
-    if (gallery) {
-      gallery.addEventListener("scroll", function() {
-        var card = findMostVisibleCard();
-        if (card && card !== activeCard) {
-          activateCard(card);
-        }
-      });
-      // Activate first card on load
-      var first = findMostVisibleCard();
-      if (first) activateCard(first);
-    }
-  }
+  });
 });
 </script>
 </body>
