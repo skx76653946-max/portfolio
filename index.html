@@ -50,12 +50,48 @@
       function setupViewer(viewer, loader) {
         if (!viewer || !loader) return;
         var pctEl = loader.querySelector(".loader-text");
-        viewer.addEventListener("load", function() { loader.classList.add("hidden"); if(pctEl) pctEl.textContent="100%"; });
-        viewer.addEventListener("error", function() { loader.classList.add("hidden"); });
-        viewer.addEventListener("progress-change", function(e) {
-          if (pctEl) { var p = e.detail && e.detail.progress !== undefined ? e.detail.progress : e.detail; pctEl.textContent = Math.round(p * 100) + "%"; }
+        var counter = 0;
+        var maxCount = 90;
+        var stepMs = 100;
+        var timer = null;
+        var started = false;
+        function startCounter() {
+          if (started) return;
+          started = true;
+          timer = setInterval(function() {
+            counter++;
+            if (counter >= maxCount) {
+              clearInterval(timer);
+              if (pctEl) pctEl.textContent = "加载较慢...";
+            } else {
+              if (pctEl) pctEl.textContent = counter + "%";
+            }
+          }, stepMs);
+          setTimeout(function() {
+            if (!started || counter < 100) {
+              clearInterval(timer);
+              if (pctEl) pctEl.textContent = "加载较慢...";
+            }
+          }, 15000);
+        }
+        viewer.addEventListener("load", function() {
+          clearInterval(timer);
+          counter = 100;
+          if (pctEl) pctEl.textContent = "100%";
+          setTimeout(function() { loader.classList.add("hidden"); }, 300);
         });
-        if (viewer.src && viewer.loaded) { loader.classList.add("hidden"); } else { loader.classList.remove("hidden"); }
+        viewer.addEventListener("error", function() {
+          clearInterval(timer);
+          if (pctEl) pctEl.textContent = "加载失败";
+          setTimeout(function() { loader.classList.add("hidden"); }, 2000);
+        });
+        viewer.addEventListener("model-visibility", function(e) {
+          if (e.detail.visible && !started) startCounter();
+        });
+        if (viewer.src && viewer.loaded) { loader.classList.add("hidden"); } else {
+          startCounter();
+          loader.classList.remove("hidden");
+        }
       }
 
       document.querySelectorAll(".card[data-model]").forEach(function(card) {
