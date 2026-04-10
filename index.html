@@ -174,15 +174,15 @@
       if (e.target.closest(".expand-btn")) return;
       e.preventDefault();
       var videoUrl = card.dataset.video;
-        var name = card.dataset.name;
-        videoCaption.textContent = name;
-        var iframe = document.createElement("iframe");
-        iframe.src = videoUrl + (videoUrl.indexOf("?") > -1 ? "&" : "?") + "autoplay=1";
-        iframe.allow = "autoplay; fullscreen";
-        videoContainer.innerHTML = "";
-        videoContainer.appendChild(iframe);
-        videoModal.classList.add("active");
-      });
+      var name = card.dataset.name;
+      videoCaption.textContent = name;
+      var iframe = document.createElement("iframe");
+      iframe.src = videoUrl + (videoUrl.indexOf("?") > -1 ? "&" : "?") + "autoplay=1";
+      iframe.allow = "autoplay; fullscreen";
+      videoContainer.innerHTML = "";
+      videoContainer.appendChild(iframe);
+      videoModal.classList.add("active");
+    });
     }
   });
   videoCloseBtn.addEventListener("click", function() {
