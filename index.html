@@ -21,7 +21,7 @@
     </section>
     <section class="section" id="videos">
       <h2>Videos</h2>
-      <div class="gallery"><div class="card video-card"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="Video 1" frameborder="0" allowfullscreen></iframe><p class="caption">Video 1</p></div><div class="card video-card"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="Video 2" frameborder="0" allowfullscreen></iframe><p class="caption">Video 2</p></div><div class="card video-card"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="Video 3" frameborder="0" allowfullscreen></iframe><p class="caption">Video 3</p></div></div>
+      <div class="gallery"><div class="card video-card"><iframe src="https://player.bilibili.com/player.html?bvid=BV1CBQAByEeo" title="地编示例-霓虹" frameborder="0" allowfullscreen></iframe><p class="caption">地编示例-霓虹</p></div><div class="card video-card"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" title="Video 2" frameborder="0" allowfullscreen></iframe><p class="caption">Video 2</p></div><div class="card video-card"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" title="Video 3" frameborder="0" allowfullscreen></iframe><p class="caption">Video 3</p></div></div>
     </section>
     <section class="section" id="ai">
       <h2>AI Works</h2>
@@ -35,7 +35,7 @@
     <div class="modal-content">
       <button class="modal-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
       <model-viewer id="modalViewer" auto-rotate camera-controls ar></model-viewer>
-      <div class="model-loader modal-loader" id="modalLoader"><div class="spinner"></div></div>
+      <div class="model-loader modal-loader" id="modalLoader"><div class="spinner"></div><div class="loader-text">0%</div><div class="loader-hint"></div></div>
       <p class="modal-caption" id="modalCaption"></p>
     </div>
   </div>
@@ -53,6 +53,7 @@
         var counter = 0;
         var maxCount = 90;
         var stepMs = 100;
+        var totalMs = maxCount * stepMs;
         var timer = null;
         var started = false;
         function startCounter() {
