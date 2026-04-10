@@ -393,3 +393,51 @@ model-viewer::part(default-ar-button) {
     top: -3.5rem;
   }
 }
+
+
+/* Video thumbnail & play button */
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.video-thumbnail::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.play-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.play-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+
+/* Video modal */
+.video-modal .video-container {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.video-modal .video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
