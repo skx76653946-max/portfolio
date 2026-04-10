@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>四人 - 3D Artist</title>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
-  <style>:root{--bg-primary:#1a1d23;--bg-secondary:#21252d;--bg-card:#262b33;--text-secondary:#8b949e}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Segoe UI,system-ui,sans-serif;background-color:var(--bg-primary);color:#e6edf3;line-height:1.6}header{text-align:center;padding:4rem 1rem}header h1{font-size:4rem;font-weight:700;color:#fff}.tagline{color:#e8e0d0;font-size:1rem;letter-spacing:.35em;text-transform:uppercase}main{max-width:1200px;margin:0 auto;padding:2rem 1rem}.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}.card{flex:0 1 340px;background-color:var(--bg-card);border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;aspect-ratio:4/3;position:relative}model-viewer{width:100%;height:100%;background-color:var(--bg-card)}.caption{position:absolute;bottom:0;left:0;right:0;padding:.75rem;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:.9rem;color:var(--text-secondary)}.loading-bg{position:absolute;inset:0;background:linear-gradient(135deg,#2a2d33,#1a1d23);display:flex;align-items:center;justify-content:center}.loading-bg span{color:#555;font-size:.8rem}@media(max-width:600px){.gallery{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;justify-content:flex-start;gap:0;padding-bottom:1rem}.gallery::-webkit-scrollbar{display:none}.gallery .card{flex:0 0 85vw;max-width:85vw;scroll-snap-align:center}header h1{font-size:2.5rem}}</style>
+  <style>:root{--bg-primary:#1a1d23;--bg-secondary:#21252d;--bg-card:#262b33;--text-secondary:#8b949e}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Segoe UI,system-ui,sans-serif;background-color:var(--bg-primary);color:#e6edf3;line-height:1.6}header{text-align:center;padding:4rem 1rem}header h1{font-size:4rem;font-weight:700;color:#fff}.tagline{color:#e8e0d0;font-size:1rem;letter-spacing:.35em;text-transform:uppercase}main{max-width:1200px;margin:0 auto;padding:2rem 1rem}.gallery{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem}.card{flex:0 1 340px;background-color:var(--bg-card);border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;aspect-ratio:4/3;position:relative}.card-inner{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#2a2d33,#1a1d23);gap:.5rem}.card-inner svg{color:#555}.card-inner span{color:#555;font-size:.85rem}model-viewer{width:100%;height:100%;background-color:var(--bg-card)}.caption{position:absolute;bottom:0;left:0;right:0;padding:.75rem;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:.9rem;color:var(--text-secondary)}@media(max-width:600px){.gallery{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;justify-content:flex-start;gap:0;padding-bottom:1rem}.gallery::-webkit-scrollbar{display:none}.gallery .card{flex:0 0 85vw;max-width:85vw;scroll-snap-align:center;height:240px}header h1{font-size:2.5rem}}</style>
 </head>
 <body>
   <header>
@@ -13,30 +13,64 @@
     <p class="tagline">3D Artist</p>
   </header>
   <main>
-    <div class="gallery"><div class="card" data-model="models/whale.glb" data-poster="" data-name="Whale"><div class="loading-bg"><span>Loading...</span></div><model-viewer style="display:none" src="models/whale.glb" alt="Whale" auto-rotate camera-controls ar></model-viewer><p class="caption">Whale</p></div><div class="card" data-model="models/gun.glb" data-poster="" data-name="Gun"><div class="loading-bg"><span>Loading...</span></div><model-viewer style="display:none" src="models/gun.glb" alt="Gun" auto-rotate camera-controls ar></model-viewer><p class="caption">Gun</p></div><div class="card" data-model="models/lantern.glb" data-poster="" data-name="Lantern"><div class="loading-bg"><span>Loading...</span></div><model-viewer style="display:none" src="models/lantern.glb" alt="Lantern" auto-rotate camera-controls ar></model-viewer><p class="caption">Lantern</p></div><div class="card" data-model="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" data-poster="https://modelviewer.dev/shared-assets/models/RobotExpressive.png" data-name="Robot"><div class="loading-bg"><span>Loading...</span></div><model-viewer style="display:none" src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" alt="Robot" auto-rotate camera-controls ar poster="https://modelviewer.dev/shared-assets/models/RobotExpressive.png"></model-viewer><p class="caption">Robot</p></div><div class="card" data-model="https://modelviewer.dev/shared-assets/models/Horse.glb" data-poster="https://modelviewer.dev/shared-assets/models/Horse.png" data-name="Horse 2"><div class="loading-bg"><span>Loading...</span></div><model-viewer style="display:none" src="https://modelviewer.dev/shared-assets/models/Horse.glb" alt="Horse 2" auto-rotate camera-controls ar poster="https://modelviewer.dev/shared-assets/models/Horse.png"></model-viewer><p class="caption">Horse 2</p></div></div>
+    <div class="gallery"><div class="card" data-model="models/whale.glb" data-poster="" data-name="Whale"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>3D</span></div><p class="caption">Whale</p></div><div class="card" data-model="models/gun.glb" data-poster="" data-name="Gun"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>3D</span></div><p class="caption">Gun</p></div><div class="card" data-model="models/lantern.glb" data-poster="" data-name="Lantern"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>3D</span></div><p class="caption">Lantern</p></div><div class="card" data-model="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb" data-poster="https://modelviewer.dev/shared-assets/models/RobotExpressive.png" data-name="Robot"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>3D</span></div><p class="caption">Robot</p></div><div class="card" data-model="https://modelviewer.dev/shared-assets/models/Horse.glb" data-poster="https://modelviewer.dev/shared-assets/models/Horse.png" data-name="Horse 2"><div class="card-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg><span>3D</span></div><p class="caption">Horse 2</p></div></div>
   </main>
   <script>
 document.addEventListener("DOMContentLoaded", function() {
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      var card = entry.target;
-      var mv = card.querySelector("model-viewer");
-      var bg = card.querySelector(".loading-bg");
-      if (entry.isIntersecting) {
-        // In view: show model-viewer
-        if (mv) mv.style.display = "";
-        if (bg) bg.style.display = "none";
-      } else {
-        // Out of view: hide to save GPU memory
-        if (mv) mv.style.display = "none";
-        if (bg) bg.style.display = "";
-      }
-    });
-  }, { threshold: 0.3 });
+  var observer = null;
+  var activeCard = null;
 
-  document.querySelectorAll(".card[data-model]").forEach(function(card) {
-    observer.observe(card);
-  });
+  function activateCard(card) {
+    if (activeCard === card) return;
+    if (activeCard) deactivateCard(activeCard);
+    activeCard = card;
+
+    var model = card.dataset.model;
+    var poster = card.dataset.poster || "";
+    var name = card.dataset.name || "";
+    var inner = card.querySelector(".card-inner");
+    if (!inner) return;
+
+    var mv = document.createElement("model-viewer");
+    mv.src = model;
+    mv.alt = name;
+    mv.setAttribute("auto-rotate", "");
+    mv.setAttribute("camera-controls", "");
+    mv.setAttribute("ar", "");
+    if (poster) mv.poster = poster;
+
+    // Replace inner content with model-viewer
+    inner.style.display = "none";
+    card.insertBefore(mv, inner);
+  }
+
+  function deactivateCard(card) {
+    var mv = card.querySelector("model-viewer");
+    var inner = card.querySelector(".card-inner");
+    if (mv) card.removeChild(mv);
+    if (inner) inner.style.display = "";
+  }
+
+  // Mobile: use IntersectionObserver
+  var isMobile = window.innerWidth <= 600;
+  if (isMobile) {
+    observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          activateCard(entry.target);
+        } else {
+          if (activeCard === entry.target) {
+            deactivateCard(entry.target);
+            activeCard = null;
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll(".card[data-model]").forEach(function(card) {
+      observer.observe(card);
+    });
+  }
 });
 </script>
 </body>
