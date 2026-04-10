@@ -65,13 +65,35 @@
       document.querySelectorAll(".card[data-model]").forEach(function(card) {
         var btn = card.querySelector(".expand-btn");
         if (btn) {
+          var lastOpenedModel = "";
+      document.querySelectorAll(".card[data-model]").forEach(function(card) {
+        var btn = card.querySelector(".expand-btn");
+        if (btn) {
           btn.addEventListener("click", function() {
-            modalViewer.src = "";
-            modalLoader.classList.remove("hidden");
-            modalViewer.src = card.dataset.model;
-            modalViewer.poster = card.dataset.poster || "";
+            var targetModel = card.dataset.model;
+            var targetPoster = card.dataset.poster || "";
             modalCaption.textContent = card.dataset.name;
             modal.classList.add("active");
+            modalLoader.classList.remove("hidden");
+
+            if (targetModel === lastOpenedModel) {
+              var parent = modalViewer.parentNode;
+              var newViewer = document.createElement("model-viewer");
+              newViewer.setAttribute("id", "modalViewer");
+              newViewer.setAttribute("auto-rotate", "");
+              newViewer.setAttribute("camera-controls", "");
+              newViewer.setAttribute("ar", "");
+              newViewer.src = targetModel;
+              newViewer.poster = targetPoster;
+              newViewer.addEventListener("load", function() { modalLoader.classList.add("hidden"); });
+              newViewer.addEventListener("error", function() { modalLoader.classList.add("hidden"); });
+              parent.replaceChild(newViewer, modalViewer);
+              modalViewer = newViewer;
+            } else {
+              modalViewer.src = targetModel;
+              modalViewer.poster = targetPoster;
+            }
+            lastOpenedModel = targetModel;
           });
         }
       });
