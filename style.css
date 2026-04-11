@@ -188,11 +188,17 @@ footer {
   }
 
   .gallery .card model-viewer {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .gallery .card model-viewer.mobile-active {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .gallery .card .card-placeholder {
-    display: flex;
+    display: none;
   }
 
   .card-placeholder {
