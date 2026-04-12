@@ -104,6 +104,29 @@ main {
   gap: 1.5rem;
 }
 
+/* Gallery dots - mobile scroll indicator */
+.gallery-dots {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.dot.active {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.3);
+}
+
 .card {
   flex: 0 1 340px;
   background-color: var(--bg-card);
@@ -177,6 +200,10 @@ footer {
 
   .gallery::-webkit-scrollbar {
     display: none;
+  }
+
+  .gallery-dots {
+    display: flex;
   }
 
   .gallery .card {
